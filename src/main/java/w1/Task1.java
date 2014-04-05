@@ -13,7 +13,16 @@ public class Task1 {
      * @return количество уникальных чисел
      */
     public int numberOfUniqueNumbers(int[] array) {
-        return array.length - 1;
+        int c = 0;
+
+        java.util.Arrays.sort(array);
+        for (int i = 0; i < array.length; ++i) {
+            if ((i == 0 || array[i] > array[i - 1])){
+                c++;
+            }
+        }
+
+        return c;
     }
 
     /**
@@ -22,6 +31,35 @@ public class Task1 {
      * @return самое часто встречающееся число (или одно из, если таковых несколько)
      */
     public int mostFrequentNumber(int[] array) {
-        return 42;
+           int c = 0;
+        int k = 0;
+        int x = 0;
+        int m = 0;
+       
+            java.util.Arrays.sort(array);
+
+            k = 1;
+            x = array[0];
+            m = 1;
+            for (int i = 1; i < array.length; i++) 
+                
+                if (array[i - 1] == array[i]) {
+                    m++;
+                } else{ 
+                    if (m > k) {
+                    k = m;
+                    x = array[i - 1];
+                }
+            
+                m = 1;
+            }                
+            
+              if (m > k) {
+                k = m;
+                x = array[array.length-1];
+            }  
+            return x;
+
     }
-}
+    }
+
