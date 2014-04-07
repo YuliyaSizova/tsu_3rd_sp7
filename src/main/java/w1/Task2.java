@@ -24,18 +24,12 @@ public class Task2 {
                int f = n - m;
         int y = 0;
         
-        for (int i = 0; i < array.length; i++) {
-            {  if (i == m) {
-//                            
-                 while (y <f) {
+       while (y <f) {
                    for (int r= m; r< array.length -1; r++) 
                    {array[r] = array[r + 1]; }         
                     
                     y++;              
             }
-            }
-           }
-        }
             
 //          
         
