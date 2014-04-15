@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.*;
 
 public class W1Task1Test {
-    private static final int ARAY_SIZE = (1024*1024);
+    private static final int ARAY_SIZE = (1024);
     private static final int STOP_GENERATION_AFTER_NUM_OF_FAILS = 100;
     private static final int NUM_OF_MULTIPLE_NUMS = 11;
 

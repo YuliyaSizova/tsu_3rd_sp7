@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class W1Task2Test {
     private static final int MIN_ARR_LEN = 1;
-    private static final int MAX_ARR_LEN = 2048;
+    private static final int MAX_ARR_LEN = 32;
 
     private static void testIt(Task2 task, int array[], int m, int n) {
         assertTrue(m < n);

@@ -22,15 +22,11 @@ public class Task2 {
      */
     public int[] remove(int array[], int m, int n) {
                int f = n - m;
-        int y = 0;
-        
-       while (y <f) {
-                   for (int r= m; r< array.length -1; r++) 
-                   {array[r] = array[r + 1]; }         
+       
+                   for (int r= m; r< array.length -f; r++) 
+                   {array[r] = array[r + f]; }         
                     
-                    y++;              
-            }
-            
+        
 //          
         
 
