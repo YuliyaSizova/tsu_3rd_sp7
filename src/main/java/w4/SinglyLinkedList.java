@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package w4;
+package javaapplication5;
 
 /**
  * Односвязный список целых чисел
  */
 public class LinkedList {
 
-    
-    private int size = 0;
     private Node head = null;
+    private int size = 0;
+   
 
     /**
      * Добавляет число i в конец списка
@@ -59,9 +59,7 @@ public class LinkedList {
             newList.addNode(nodeToPop);
             putList(newList, sortedList, 0);
         }
-        // После того, как исходный список опустошён, делаем слияние всех
-        // списков, которые остались в стеке, и забираем полный список из
-        // конца стека
+      
         for (int i = 1; i < sortedList.length; i++) {
             putList(sortedList[i - 1], sortedList, i);
         }
@@ -74,31 +72,23 @@ public class LinkedList {
         Node currentNode = head;
         while (currentNode != null) {
 
-            builder.append(currentNode.getValue()).append(", ");
+            builder.append(currentNode.getValue()).append(" ");
             currentNode = currentNode.getNext();
         }
         return builder.toString();
     }
 
-    /**
-     * Кладёт отсортированный список выбранную позицию стрека списков. Если
-     * место занято, производит слияние и кладёт полученный список в следующую
-     * позицию (по такому же принципу).
-     *
-     * @param listToPut отсортированный список, который нужно поместить в стек
-     * @param sortedLists стек списков
-     * @param startPosition позиция, в которую нужно поместить список
-     */
-    private void putList(LinkedList listToPut, LinkedList[] sortedLists, int startPosition) {
-        if (startPosition >= sortedLists.length || listToPut == null) {
+  
+    private void putList(LinkedList gettingList, LinkedList[] sortedList, int startPos) {
+        if (startPos >= sortedList.length || gettingList == null) {
             return;
         }
-        if (sortedLists[startPosition] == null) {
-            sortedLists[startPosition] = listToPut;
+        if (sortedList[startPos] == null) {
+            sortedList[startPos] = gettingList;
         } else {
-            LinkedList newList = merge(sortedLists[startPosition], listToPut);
-            sortedLists[startPosition] = null;
-            putList(newList, sortedLists, startPosition + 1);
+            LinkedList newList = merge(sortedList[startPos], gettingList);
+            sortedList[startPos] = null;
+            putList(newList, sortedList, startPos + 1);
         }
     }
 
